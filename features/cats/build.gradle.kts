@@ -54,8 +54,8 @@ dependencies {
 
     implementation(libs.kotlinx.coroutines.android)
 
-    implementation(libs.gson)
+    implementation(libs.kotlinx.serialization.json)
+    implementation(libs.androidx.annotation)
 
     implementation(project(":core:data"))
-    implementation(project(":core:cats-api"))
 }

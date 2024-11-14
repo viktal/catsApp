@@ -6,10 +6,23 @@ import com.example.data.model.Cat
 internal fun Cat.toCatUI(): CatUI {
     return CatUI(
         id = this.id,
-        imageUrl = this.url,
-        breed = this.breed?.map { it.name }?.joinToString(),
-        country = this.breed?.map { it.origin }?.joinToString(),
-        description = this.breed?.map { it.description }?.joinToString(),
-        temperament = this.breed?.map { it.temperament }?.joinToString()
+        imageUrl = this.imageUrl,
+        breed = this.breed,
+        country = this.country,
+        description = this.description,
+        temperament = this.temperament,
+        isFavorite = this.isFavorite,
+    )
+}
+
+internal fun CatUI.toCat(): Cat {
+    return Cat(
+        id = this.id,
+        imageUrl = this.imageUrl,
+        breed = this.breed,
+        country = this.country,
+        description = this.description,
+        temperament = this.temperament,
+        isFavorite = this.isFavorite,
     )
 }

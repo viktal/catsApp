@@ -1,7 +1,6 @@
 package com.example.cats.ui.utils
 
 import androidx.compose.runtime.Composable
-import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -11,8 +10,7 @@ import com.example.cats.ui.view.CatsMainScreen
 import com.example.cats.ui.viewModel.CatsMainViewModel
 
 @Composable
-internal fun CatsNavHost(navController: NavHostController) {
-    val viewModel: CatsMainViewModel = viewModel(factory = CatsMainViewModel.Factory)
+internal fun CatsNavHost(navController: NavHostController, viewModel: CatsMainViewModel) {
 
     NavHost(navController = navController, startDestination = Screen.CatsListScreen.route) {
         composable(route = Screen.CatsListScreen.route) {

@@ -26,6 +26,7 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.kotlinx.coroutines.android)
     implementation(libs.androidx.paging.common.android)
+    implementation(libs.androidx.room.ktx)
 
     implementation(project(":core:database"))
     implementation(project(":core:cats-api"))

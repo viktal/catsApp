@@ -11,12 +11,12 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.paging.LoadState
 import androidx.paging.compose.LazyPagingItems
-import com.example.cats.ui.viewModel.CatsMainViewModel
 import com.example.cats.ui.model.CatUI
 import com.example.cats.ui.model.Screen
+import com.example.cats.ui.viewModel.CatsMainViewModel
 
 @Composable
-fun CatListContent(
+internal fun CatListContent(
     cats: LazyPagingItems<CatUI>,
     navController: NavController,
     viewModel: CatsMainViewModel
@@ -43,10 +43,14 @@ fun CatListContent(
             else -> {
                 items(cats.itemCount) { index ->
                     cats[index]?.let { cat ->
-                        CatItem(cat = cat, onClick = {
-                            viewModel.updateSelectedCat(cat)
-                            navController.navigate(Screen.CatDetailScreen.route)
-                        })
+                        CatItem(
+                            cat = cat,
+                            viewModel = viewModel,
+                            modifier = Modifier.clickable {
+                                viewModel.updateSelectedCat(cat)
+                                navController.navigate(Screen.CatDetailScreen.route)
+                            }
+                        )
                     }
                 }
 

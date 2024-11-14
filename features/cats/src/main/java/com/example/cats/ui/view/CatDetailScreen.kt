@@ -38,7 +38,7 @@ import com.example.cats.ui.viewModel.CatsMainViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun CatDetailScreen(navController: NavController, viewModel: CatsMainViewModel) {
+internal fun CatDetailScreen(navController: NavController, viewModel: CatsMainViewModel) {
     val cat by viewModel.selectedCat.collectAsState()
 
     if (cat == null) {
@@ -67,7 +67,7 @@ fun CatDetailScreen(navController: NavController, viewModel: CatsMainViewModel) 
 }
 
 @Composable
-fun CatDetailContent(cat: CatUI, modifier: Modifier = Modifier) {
+internal fun CatDetailContent(cat: CatUI, modifier: Modifier = Modifier) {
     val scrollState = rememberScrollState()
 
     Column(

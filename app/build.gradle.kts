@@ -50,8 +50,11 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
 
     implementation(project(":features:cats"))
     implementation(project(":core:data"))
     implementation(project(":core:cats-api"))
+    implementation(project(":core:database"))
 }

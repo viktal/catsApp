@@ -2,13 +2,15 @@ package com.example.data
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
+import com.example.data.database.ServerRepository
 import com.example.data.model.Cat
 
 class CatsPagingSource(
-    private val repository: CatsRepository,
+    private val repository: ServerRepository,
     private val limit: Int,
     private val orderParam: String
 ) : PagingSource<Int, Cat>() {
+
     override fun getRefreshKey(state: PagingState<Int, Cat>): Int? {
         return state.anchorPosition
     }

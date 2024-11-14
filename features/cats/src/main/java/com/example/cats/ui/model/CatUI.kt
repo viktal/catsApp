@@ -2,6 +2,7 @@ package com.example.cats.ui.model
 
 import kotlinx.serialization.Serializable
 
+
 @Serializable
 data class CatUI (
     val id: String,
@@ -10,4 +11,5 @@ data class CatUI (
     val country: String?,
     val description: String?,
     val temperament: String?,
+    val isFavorite: Boolean? = false,
 )

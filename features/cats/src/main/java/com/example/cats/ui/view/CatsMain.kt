@@ -31,9 +31,9 @@ import com.example.cats.ui.utils.CatsNavHost
 import com.example.cats.ui.viewModel.CatsMainViewModel
 
 @Composable
-fun CatsMainScreen() {
+fun CatsMainScreen(catsViewModel: CatsMainViewModel) {
     val navController = rememberNavController()
-    CatsNavHost(navController = navController)
+    CatsNavHost(navController = navController, viewModel = catsViewModel)
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -43,7 +43,7 @@ internal fun CatsMainScreen(viewModel: CatsMainViewModel, navController: NavCont
     val selectedTab by viewModel.selectedTab.collectAsState()
     val catsPagingItems = viewModel.catsPagingData.collectAsLazyPagingItems()
 
-    val tabs = listOf(ContentTab.Latest, ContentTab.Newest, ContentTab.Random, ContentTab.Favorite)
+    val tabs = listOf(ContentTab.Latest, ContentTab.Newest, ContentTab.Random)
 
     Column {
         TopAppBar(
@@ -72,7 +72,7 @@ internal fun CatsMainScreen(viewModel: CatsMainViewModel, navController: NavCont
 }
 
 @Composable
-fun ErrorMessage(
+internal fun ErrorMessage(
     modifier: Modifier = Modifier,
 ) {
     Column {
@@ -83,13 +83,16 @@ fun ErrorMessage(
                 .padding(8.dp),
             contentAlignment = Alignment.Center
         ) {
-            Text(text = stringResource(id = R.string.error_message), color = MaterialTheme.colorScheme.onError)
+            Text(
+                text = stringResource(id = R.string.error_message),
+                color = MaterialTheme.colorScheme.onError
+            )
         }
     }
 }
 
 @Composable
-fun ProgressIndicator(
+internal fun ProgressIndicator(
     modifier: Modifier = Modifier,
 ) {
     Column {
