@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Cats App</string>
+    <string name="error_message">Error during update</string>
+
+    <string name="breed_subtitle">Breed:</string>
+    <string name="country_subtitle">Country:</string>
+
+    <string name="description_subtitle">Description</string>
+    <string name="temperament_subtitle">Temperament</string>
+
+    <string name="contentDescription_cat_image">Cat Image</string>
+    <string name="contentDescription_back_button">Back</string>
+</resources>
