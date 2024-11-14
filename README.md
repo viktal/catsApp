@@ -6,9 +6,9 @@ Cats App is an Android application that displays information about different cat
 
 - **List of Cats**: Displays a list of cats with an image, breed name, and country of origin.
 - **Breed Details**: Tapping on a breed opens a detailed view with additional information, including the breed’s country, description, and temperament.
+- **Favourites**: Allows users to ‘favourite’ a cat breed.
 
 ![cats app2](https://github.com/user-attachments/assets/20d40b10-b48b-4155-8ca1-0f67634b8fff)
-
 
 ## Technologies
 
@@ -18,10 +18,12 @@ Cats App is an Android application that displays information about different cat
 - **Jetpack ViewModel**
 - **Paging 3**
 - **Jetpack Navigation**
+- **Room**
 
 ## Project Structure
 
 - **:app**: the main application module.
 - **:core:data**: data handling logic, including data repositories.
 - **:core:cats-api**: handles API interactions with The Cat API, managing network requests.
+- **:core:database**: manages the local database setup.
 - **:features:cats**: the main feature for displaying the list of cats and breed details.
