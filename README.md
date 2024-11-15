@@ -8,7 +8,7 @@ Cats App is an Android application that displays information about different cat
 - **Breed Details**: Tapping on a breed opens a detailed view with additional information, including the breed’s country, description, and temperament.
 - **Favourites**: Allows users to ‘favourite’ a cat breed.
 
-![cats app2](https://github.com/user-attachments/assets/20d40b10-b48b-4155-8ca1-0f67634b8fff)
+![cats app](https://github.com/user-attachments/assets/9edd398c-30a7-4bcd-a3a5-8375a527975e)
 
 ## Technologies
 
