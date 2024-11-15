@@ -1,3 +1,5 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.jetbrains.kotlin.android)
@@ -15,8 +17,14 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
 
-        val apiKey = project.property("API_KEY") as String
-        buildConfigField("String", "API_KEY", apiKey)
+
+        val keystorePropertiesFile = rootProject.file("keystore.properties")
+        val keystoreProperties = Properties()
+
+        if (keystorePropertiesFile.exists()) {
+            keystoreProperties.load(keystorePropertiesFile.inputStream())
+        }
+        buildConfigField("String", "API_KEY", "\"${keystoreProperties["API_KEY"]}\"")
 
         val baseUrl = project.property("BASE_URL") as String
         buildConfigField("String", "BASE_URL", baseUrl)
